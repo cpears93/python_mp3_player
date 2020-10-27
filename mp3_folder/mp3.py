@@ -1,3 +1,4 @@
+from tkinter.constants import HORIZONTAL
 import pygame
 import tkinter as tkr
 import os
@@ -11,6 +12,10 @@ player.geometry("300x600")
 os.chdir("C:\Users\Chris' PC\Downloads\mp3 playlist")
 print(os.getcwd)
 songlist = os.listdir()
+
+VolumeLevel = tkr.Scale(player,from_=0.0,to_=1.0,
+                        orient = tkr.HORIZONTAL, resolution = 0.1)
+
 
 playlist = tkr.listbox(player,highlightcolor="blue",selectmode = tkr.SINGLE)
 print(songlist)
@@ -28,6 +33,9 @@ def Play():
     pygame.mixer.music.load(playlist.get(tkr.ACTIVE))
     var.set(playlist.get(tkr.ACTIVE))
     pygame.mixer.music.play()
+    pygame.mixer.music.get_volume(VolumeLevel.get())
+    print(pygame.mixer.music.get_volume())
+    print(VolumeLevel.get())
 
 def ExitPlayer():
     pygame.mixer.music.stop()
@@ -53,7 +61,7 @@ button1.pack(fill="x")
 button2.pack(fill="x")
 button3.pack(fill="x")
 button4.pack(fill="x")
-songtitle.pack()
+VolumeLevel.pack(fill="x")
 playlist.pack(fill="both", expand="yes")
 
 
