@@ -32,17 +32,27 @@ def Play():
 def ExitPlayer():
     pygame.mixer.music.stop()
 
+def Pause():
+    pygame.mixer.music.pause()
 
-Button1 = tkr.Button(player,width=5,height=3, text="PLAY",command=Play)
-Button2 = tkr.Button(player,width=5,height=3, text="STOP",command=ExitPlayer)
+def UnPause():
+    pygame.mixer.music.unpause()    
+
+
+button1 = tkr.Button(player,width=5,height=3, text="PLAY",command=Play)
+button2 = tkr.Button(player,width=5,height=3, text="STOP",command=ExitPlayer)
+button3 = tkr.Button(player,width=5,height=3, text="PAUSE",command=Pause)
+button4 = tkr.Button(player,width=5,height=3, text="UNPAUSE",command=UnPause)
 
 
 var = tkr.StringVar()
 songtitle = tkr.Label(player, textvariable=var)
 
 songtitle.pack()
-Button1.pack(fill="x")
-Button2.pack(fill="x")
+button1.pack(fill="x")
+button2.pack(fill="x")
+button3.pack(fill="x")
+button4.pack(fill="x")
 songtitle.pack()
 playlist.pack(fill="both", expand="yes")
 
