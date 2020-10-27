@@ -40,6 +40,7 @@ Button2 = tkr.Button(player,width=5,height=3, text="STOP",command=ExitPlayer)
 var = tkr.StringVar()
 songtitle = tkr.Label(player, textvariable=var)
 
+songtitle.pack()
 Button1.pack(fill="x")
 Button2.pack(fill="x")
 songtitle.pack()
