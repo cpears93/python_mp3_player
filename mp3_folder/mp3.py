@@ -1,6 +1,6 @@
 import pygame
 import tkinter as tkr
-
+import os
 
 player = tkr.Tk()
 
@@ -8,13 +8,16 @@ player = tkr.Tk()
 player.title("mp3 Player")
 player.geometry("300x600")
 
+os.chdir("C:\Users\Chris' PC\Downloads\mp3 playlist")
+songlist = os.listdir()
 
-file = "Song.mp3"
 
+
+pygame.init()
+pygame.mixer.init()
 
 def Play():
-    pygame.init()
-    pygame.mixer.init()
+    
     pygame.mixer.music.load(file)
     pygame.mixer.music.play()
 
@@ -23,15 +26,15 @@ def ExitPlayer():
 
 
 Button1 = tkr.Button(player,width=5,height=3, text="PLAY",command=Play)
-Button1.pack(fill ="x")
 Button2 = tkr.Button(player,width=5,height=3, text="STOP",command=ExitPlayer)
-Button2.pack(fill ="x")
 
+contents1 = tkr.Label(label1, text=file)
 
-label1 = tkr.LabelFrame(player, text="Song Name")
-label1.pack(fill="both", expand="yes")
-contents1 = tkr.Label(label1, text = file)
+Button1.pack(fill="x")
+Button2.pack(fill="x")
 contents1.pack()
 
 
 player.mainloop()
+
+
