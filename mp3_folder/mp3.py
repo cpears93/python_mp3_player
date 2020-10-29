@@ -7,7 +7,7 @@ player = tkr.Tk()
 
 
 player.title("mp3 Player")
-player.geometry("300x600")
+player.geometry("600x900")
 
 os.chdir("C:\Users\Chris' PC\Downloads\mp3 playlist")
 print(os.getcwd)
