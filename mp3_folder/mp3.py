@@ -5,7 +5,6 @@ import os
 
 player = tkr.Tk()
 
-
 player.title("mp3 Player")
 player.geometry("600x900")
 
@@ -16,14 +15,12 @@ songlist = os.listdir()
 VolumeLevel = tkr.Scale(player,from_=0.0,to_=1.0,
                         orient = tkr.HORIZONTAL, resolution = 0.1)
 
-
 playlist = tkr.listbox(player,highlightcolor="blue",selectmode = tkr.SINGLE)
 print(songlist)
 for item in songlist:
     pos = 0
     playlist.insert(pos, item)
     pos = pos + 1
-
 
 pygame.init()
 pygame.mixer.init()
