@@ -49,7 +49,6 @@ button2 = tkr.Button(player,width=5,height=3, text="STOP",command=ExitPlayer)
 button3 = tkr.Button(player,width=5,height=3, text="PAUSE",command=Pause)
 button4 = tkr.Button(player,width=5,height=3, text="UNPAUSE",command=UnPause)
 
-
 var = tkr.StringVar()
 songtitle = tkr.Label(player, textvariable=var)
 
@@ -60,7 +59,6 @@ button3.pack(fill="x")
 button4.pack(fill="x")
 VolumeLevel.pack(fill="x")
 playlist.pack(fill="both", expand="yes")
-
 
 player.mainloop()
 
